@@ -1,72 +1,201 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
 }
 
 :root {
-    /* Dark blue */
-    --dark-blue-100: #609ED4;
-    --dark-blue-200: #356EA9;
-    --dark-blue-300: #0A3871;
-    --dark-blue-400: #072B61;
-    --dark-blue-500: #052051;
-
-    /* Light Blue */
-    --light-blue-100: #F3F5FC;
-    --light-blue-200: #EFF1FA;
-    --light-blue-300: #E9ECF8;
-    --light-blue-400: #AAB2D5;
-    --light-blue-500: #757FB2;
-
-    /* Gray */
-    --gray-100: #CED4DA;
-    --gray-200: #ADB5BD;
-    --gray-300: #868E96;
-    --gray-400: #495057;
-    --gray-500: #343A40;
+    --primary-color: #F3F5FC;
+    --secondary-color: #0A3871;
+    --tertiary-color: #FFFFFF;
+    --text-resp: #495057;
 }
 
 body {
-    display: grid;
-    grid-template-areas: 
-    "header header aside"
-    "main main aside";
-    background-color: var(--light-blue-100);
-    margin: 40px;
+    width: 100%;
+    background-color: var(--primary-color);
 }
 
-.header {
-    grid-area: header;
+header {
+    width: 100%;
+    position: initial;
 }
 
-.content {
-    grid-area: main;
-    border: 1px solid black
+header img {
+    padding: 24px 0 24px 16px;
 }
 
-.output-section {
-    background-color: white;
-    grid-area: aside;
-    border-radius: 32px;
+section {
+    padding: 1.2em;
+}
+
+section textarea {
+    background-color: unset;
+    border: unset;
+    width: 100%;
+    outline: none;
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: var(--secondary-color);
+    height: 12em;
+}
+
+section textarea::placeholder {
+    color: var(--secondary-color);
+}
+
+section textarea:active {
+    background-color: unset;
+    border: unset;
+    outline: none;
+}
+
+section .info {
+    display: flex;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1.2em;
+}
+
+section .info img {
+    padding-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+section .info small {
+    font-size: 1em;
+}
+
+section .btn {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+}
+
+section .btn button {
+    padding: 2em;
+    border: 1px solid var(--secondary-color);
+    border-radius: 2em;
+    color: var(--secondary-color);
+    background-color: unset;
+}
+
+section .btn button:first-child {
+    margin-bottom: 1.2em;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+section .resp {
+    margin-top: 5.2rem;
+    border-radius: 2.8rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    background-color: var(--tertiary-color);
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    max-width: 400px;
-    -webkit-border-radius: 32px;
-    -moz-border-radius: 32px;
-    -ms-border-radius: 32px;
-    -o-border-radius: 32px;
 }
 
-.output-section img {
-    height: auto;
+section .resp .active img {
+    display: none;
 }
 
-.output-section strong {
-    font-weight: bold;
+section .resp .active p {
+    margin-bottom: 1.5em;
+}
+
+section .resp .active p strong {
+    font-size: 2em;
+    line-height: 1.2em;
+    color: #343A40;
+}
+
+section .resp .active small {
+    font-size: 1.2em;
+    line-height: 2em;
+    color: var(--text-resp);
+}
+
+section .resp .inactive {
+    display: none;
+}
+
+section .resp .inactive p {
+    font-size: 2em;
+    color: var(--text-resp);
+    line-height: 2em;
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+section .resp .inactive button {
+    padding: 2em;
+    border: 1px solid var(--secondary-color);
+    border-radius: 2em;
+    color: var(--secondary-color);
+    background-color: unset;
+    width: 100%;
+}
+
+@media (min-width: 424px ) and (max-width: 768px) {
+    section .btn {
+        flex-direction: unset;
+    }
+
+    section .btn button {
+        width: 100%;
+    }
+
+    section .btn button:first-child {
+        margin-bottom: 0px;
+        margin-right: 2em;
+    }
+}
+
+@media (min-width: 769px) {
+
+    header {
+        position: absolute;
+        width: auto;
+        top: 0;
+        left: 3em;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-around;
+        padding: 4em;
+        height: 80vh;
+        align-items: center;
+    }
+
+    section .first {
+        width: 100%;
+        padding: 0 5em 0 5em;
+    }
+
+    section .btn {
+        flex-direction: unset;
+    }
+
+    section .btn button {
+        width: 100%;
+    }
+
+    section .btn button:first-child {
+        margin-bottom: 0px;
+        margin-right: 2em;
+    }
+    
+    section .resp {
+        margin-top: 0px;
+    }
+
+    section .resp .active img {
+        display: block;
+        width: 20em;
+        height: 20em;
+    }
 }

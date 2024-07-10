@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Encriptador</title>
-  </head>
-  <body>
-    <header class="header">
-      <img src="assets/Logo.svg" alt="Logo de Alura" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/Logo.svg" alt="Logo de Alura">
     </header>
-    <main class="content">
-      <section class="input-section">
-        <textarea placeholder="Ingrese el texto aquí"></textarea>
-        <div class="note">
-          <span>Solo letras minúsculas y sin acentos</span>
+    <section>
+        <div class="first">
+            <textarea rows="6" placeholder="Ingrese el texto aquí" id="textArea"></textarea>
+            <div class="info">
+                <img src="assets/exclamation-circle.svg" alt="Solo letras minúsculas y sin acentos">
+                <small>Solo letras minúsculas y sin acentos</small>
+            </div>
+            <div class="btn">
+                <button onclick="encriptar()">Encriptar</button>
+                <button onclick="desencriptar()">Desencriptar</button>
+            </div>
         </div>
-        <div class="buttons">
-          <button class="encrypt-btn">Encriptar</button>
-          <button class="decrypt-btn">Desencriptar</button>
+        <div class="resp">
+            <div class="active" id="no-resp">
+                <img src="assets/Muñeco.svg" alt="Muñeco">
+                <p>
+                    <strong>
+                        Ningún mensaje fue encontrado
+                    </strong>
+                </p>
+                <small>
+                    Ingresa el texto que desees encriptar o desencriptar.
+                </small>
+            </div>
+            <div class="inactive" id="si-resp">
+                <p id="resp">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.
+                </p>
+                <button onclick="copiar()">
+                    Copiar
+                </button>
+            </div>
         </div>
-      </section>
-    </main>
-    <aside class="output-section">
-      <img src="assets/Muñeco.svg" alt="Muñeco de búsqueda" />
-      <strong>Ningún mensaje fue encontrado</strong>
-      <span>Ingresa el texto que desees encriptar o desencriptar.</span>
-    </aside>
-  </body>
+    </section>
+    <script src="main.js"></script>
+</body>
 </html>
